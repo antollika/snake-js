@@ -1,0 +1,63 @@
+$wrapperSize: 600px;
+
+body {
+  #snake-block {
+    background-color: grey;
+    width: $wrapperSize;
+    height: $wrapperSize;
+    border: 1px solid black;
+    position: relative;
+  }
+
+  .snake-part {
+    width: calc(#{$wrapperSize} / 20);
+    height: calc(#{$wrapperSize} / 20);
+    background: green;
+    position: absolute;
+    border: 1px solid darkgrey;
+  }
+
+  .snake-head {
+    background: black;
+  }
+
+  .apple {
+    width: calc(#{$wrapperSize} / 20);
+    height: calc(#{$wrapperSize} / 20);
+    background: orange;
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  #menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: blue;
+    width: 400px;
+    height: 200px;
+    border-radius: 100px;
+    z-index: 5;
+
+    #game-over {
+      display: none;
+      color: red;
+      font-size: 40;
+      margin-bottom: 10px;
+
+      &.show {
+        display: block;
+      }
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+}
